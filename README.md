@@ -1,22 +1,17 @@
-Archive Pages
+Archive Pages - Taxonomy
 ===
 
-Add settings page to choose a page to render at the top of an archive page.
-
-Allows you to use the archive page template for a post type, but render block editor content and set the page title.
+Replace WordPress's default auto-generated term archive with a manually created Page. For each term, select the page from a dropdown of all site pages.  Good for creating topic landing pages. 
 
 ## Installation
 
 Clone or download this repository and add it to the `wp-content/plugins` directory.
 
 ## How to Use
-Go to **Settings > Archive Pages** and choose a page to set as the archive page for your custom post type.
+Go to **Settings > Archive Pages** and choose a page to set as the archive page for each taxonomy term. Pages must already be published. 
 
-Once an archive page is selected, `get_the_archive_title()` will return the title from the selected page, and `get_the_archive_description()` will return the post content from the selected page.
+When a selected page is saved, the term_link filter replaces that page's URL replaces the taxonomy link ( term_link ) so that the user is directed to the taxonomy landing page instead of the auto-generated archive. 
 
-If you want to directly access the selected archive page for a post type you can do so like this:
+The term archive will still exist at its assigned URL, but there will be no navigation to it. 
 
-```
-// Replace "my-cpt" with your custom post type slug
-get_option('archive_page_my-cpt');
-```
+Available taxonomies are currently hardcoded: category, post_tag. Add more taxonomies to array $our_taxonomies in function archive_pages_settings_init()
