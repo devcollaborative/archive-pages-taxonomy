@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) or exit;
  * Add plugin settings page.
  */
 function archive_pages_add_settings_page() {
-    add_options_page( 'Archive Pages', 'Archive Pages', 'edit_posts', 'archive-pages', 'archive_pages_render_settings_page' );
+    add_options_page( 'Archive Pages - taxonomy', 'Archive Pages', 'edit_posts', 'archive-pages', 'archive_pages_render_settings_page' );
 }
 add_action( 'admin_menu', 'archive_pages_add_settings_page' );
 
