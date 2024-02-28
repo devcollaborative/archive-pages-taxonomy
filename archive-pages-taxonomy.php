@@ -56,36 +56,27 @@ function archive_pages_settings_init() {
 	 */
 	add_settings_section('archive_pages_section', '', '', 'archive-pages');
 
-	// Add setting & dropdown for each post type.
-	foreach ($post_types as $post_type) {
-		// Register setting for this CPT.
-		register_setting('archive_pages_settings', 'archive_page_' . $post_type->name);
 
-		// Add field for this CPT.
-		add_settings_field(
-			'archive_page_' . $post_type->name,
-			"{$post_type->label} ({$post_type->name})",
-			'archive_pages_wp_dropdown_pages',
-			'archive-pages',
-			'archive_pages_section',
-			array( 'name' => 'archive_page_' . $post_type->name )
-		);
-	}
+	/* get list of all taxonomies on site that are used in Admin Panel menu
+	* includes built_in category, post_tag; excludes post_format
+	* includes custom taxonomies
+	**/
 
-	/**
-	 * hardcode the taxonomies we want to set landing pages for
-	 * WP has several utility taxonomies that should stay hidden from editors
-	 * */
+	//$our_taxonomies = array( 'category', 'post_tag'); 
 
-	//XXX clare set up way to pick categories
+	$our_taxonomies = get_taxonomies( 
+		array(
+			'public' => true,
+			'show_in_menu' => true
+		));
 
-	$our_taxonomies = array( 'category', 'post_tag'); 
-
+	
 	//get terms
 	foreach ($our_taxonomies as $taxonomy ){
-		
+
 		//get some settings
 		$tax_obj = get_taxonomy( $taxonomy );
+
 		$section_heading = $tax_obj->labels->name. ' Archives';
 		$section_name = $taxonomy.'_archive_pages_section';
 
