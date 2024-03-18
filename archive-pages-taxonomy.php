@@ -213,4 +213,16 @@ function archive_pages_replace_term_link( $termlink, $term, $taxonomy ){
 	return $termlink; 
 
 }
-add_filter('term_link', 'archive_pages_replace_term_link', 10, 3);
+add_filter( 'term_link', 'archive_pages_replace_term_link', 10, 3 );
+
+/**
+ * Flush rewrite rules when one of the options on the settings page is set or updated
+ * */
+function archive_pages_flush_rewrites( $option_name, $old_value, $value ){
+	
+ 	if ( str_starts_with( $option_name, 'archive_page_') ){		
+ 		flush_rewrite_rules(); 
+ 	}
+
+}
+add_action( 'updated_option', 'archive_pages_flush_rewrites', 10, 3 );
