@@ -88,10 +88,6 @@ function archive_pages_settings_init() {
 		//each taxonomy gets a section
 		add_settings_section($section_name, $section_heading, '', 'archive-pages');
 
-		//checkbox to show/hide this section
-		//this setting should hide the term pulldowns, AND it should disable term_links filter for this taxonomy even if individual fields are set in
-
-		archive_pages_taxonomy_toggle( $taxonomy, $section_name ); 
 
 		//display this if checkbox is checked
 		archive_pages_settings_fields( $terms, 'name', $section_name);
@@ -127,39 +123,7 @@ function archive_pages_filter_archive_titles($args) {
 	));
 }
 
-/**
- * create toggle checkbox for each taxonomy
- * 
- * */
-function archive_pages_taxonomy_toggle( $taxonomy, $section_name ){
-		
-	register_setting('archive_pages_settings', 'archive_page_toggle_' . $taxonomy);
 
-	add_settings_field(
-		'archive_page_toggle_'.$taxonomy,			//slug-name to identify field
-		'Set archive pages for '.$taxonomy,		//title or label of field
-		'archive_pages_taxonomy_toggle_callback',	//callback
-		'archive-pages',											//settings page
-		$section_name,													//section of settings page
-		array( )
-	);
-
-}
-
-/**
- * render checkbox for each taxonomy
- * @link https://code.tutsplus.com/the-wordpress-settings-api-part-8-validation-sanitisation-and-input-i--wp-25361t
- * */
-function archive_pages_taxonomy_toggle_callback( ) {
-	$options = get_option( 'archive-pages' );
-	
-	$html = '<input type="checkbox" id="checkbox_example" name="sandbox_theme_input_examples[checkbox_example]" />';
-
-
-	$html .= '<label for="checkbox_example">This is an example of a checkbox</label>';
-	
-	echo $html;
-} 
 
 /**
  * Loop through list of archives and output nice label
