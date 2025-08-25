@@ -11,6 +11,21 @@
 
 defined( 'ABSPATH' ) or exit;
 
+/**
+ * Plugin updates via GitHub
+ */
+
+require dirname( __FILE__ ) . '/updater/plugin-update-checker.php';
+
+$myUpdateChecker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+	'https://github.com/devcollaborative/archive-pages-taxonomy/',
+	__FILE__,
+	'archive-pages-taxonomy'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');	
+
 
 /**
  * Add plugin settings page.
