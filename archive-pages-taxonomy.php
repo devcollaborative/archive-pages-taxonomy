@@ -5,13 +5,13 @@
  * Description: Select a page to override taxonomy archive page title & description.
  * Author: DevCollaborative
  * Author URI: https://devcollaborative.com/
- * Version: 1.0.1
+ * Version: 1.0.2
  * Update URI: https://github.com/devcollaborative/archive-pages-taxonomy/releases/latest/
  * */
 
 defined( 'ABSPATH' ) or exit;
 
-define( 'ARCHIVE_PAGES_TAXONOMY_VERSION', '1.0.1' );
+define( 'ARCHIVE_PAGES_TAXONOMY_VERSION', '1.0.2' );
 
 /**
  * Plugin updates via GitHub

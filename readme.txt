@@ -3,7 +3,7 @@ Contributors: devcollab, hbrokmeier, cparkinson
 Tags: documentation
 Requires at least: 6.0
 Tested up to: 6.8.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -16,11 +16,16 @@ Replace WordPress's default auto-generated taxonomy term archive with a manually
 
 == Changelog ==
 
-= 1.0.1
+= 1.0.2 - 08-26-2025
+**Full Changelog**: https://github.com/devcollaborative/archive-pages-taxonomy/compare/v1.0.1...v1.0.2
+
+* Fixed bad links.
+
+= 1.0.1 - 08-25-2025
 
 **Full Changelog**: https://github.com/devcollaborative/archive-pages-taxonomy/compare/v1.0.0...v1.0.1
 
-Added  Yahnis Elsts' Plugin Update Checker with github integration
+* Added  Yahnis Elsts' Plugin Update Checker with github integration
 
 = 1.0.0 
 * Initial release
