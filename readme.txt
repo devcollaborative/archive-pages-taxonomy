@@ -16,6 +16,12 @@ Replace WordPress's default auto-generated taxonomy term archive with a manually
 
 == Changelog ==
 
+= 1.0.3 - 02-13-2026
+**Full Changelog**: https://github.com/devcollaborative/archive-pages-taxonomy/compare/v1.0.2...v1.0.3
+
+* term slug used in settings field name
+* tested to WordPress 6.9.1
+
 = 1.0.2 - 08-26-2025
 **Full Changelog**: https://github.com/devcollaborative/archive-pages-taxonomy/compare/v1.0.1...v1.0.2
 
