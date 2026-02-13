@@ -156,7 +156,7 @@ function archive_pages_settings_fields( $archives, $label, $section ){
 	foreach ($archives as $archive) {
 
 		//get a standard slug for the archive name
-		$field_slug = sanitize_title($archive->name);
+		$field_slug = sanitize_title($archive->slug);
 
 		// Register setting for this archive.
 		register_setting('archive_pages_settings', 'archive_page_' . $field_slug);
